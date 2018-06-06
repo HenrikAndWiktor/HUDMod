@@ -39,9 +39,14 @@ public class ModHUD {
     @SubscribeEvent
     public void connect(RenderGameOverlayEvent.Post rgoe) {
         try {
-            if (rgoe.type==RenderGameOverlayEvent.ElementType.EXPERIENCE) new ModHUDRender(Minecraft.getMinecraft().getCurrentServerData().serverIP,Minecraft.getMinecraft().thePlayer.getDisplayNameString(),Minecraft.getMinecraft().getCurrentServerData().serverMOTD,Minecraft.getMinecraft().getCurrentServerData().pingToServer).renderHUD();
-        } catch (NullPointerException e) {
-            new ModHUDRender("MINECRAFT INTEGRATED SERVER",Minecraft.getMinecraft().thePlayer.getDisplayNameString(),null,-1).renderHUD();
+            if (rgoe.type==RenderGameOverlayEvent.ElementType.EXPERIENCE) new ModHUDRender().renderHUD();
+        } catch (NullPointerException e) { //This means server==null
+            new ModHUDRender(
+                    "MINECRAFT INTEGRATED SERVER",
+                    Minecraft.getMinecraft().thePlayer.getDisplayNameString(),
+                    null,
+                    -1
+            ).renderHUD();
         }
     }
 }

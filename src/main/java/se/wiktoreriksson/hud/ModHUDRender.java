@@ -19,6 +19,15 @@ public class ModHUDRender {
         this.lastmsping=lastmsping;
     }
 
+    ModHUDRender() {
+        this(
+                Minecraft.getMinecraft().getCurrentServerData().serverIP,
+                Minecraft.getMinecraft().thePlayer.getDisplayNameString(),
+                Minecraft.getMinecraft().getCurrentServerData().serverMOTD,
+                Minecraft.getMinecraft().getCurrentServerData().pingToServer
+        );
+    }
+
     public void renderHUD() {
         int xPos = 2;
         int yPos = 2;
@@ -49,11 +58,5 @@ public class ModHUDRender {
         this.mc.fontRendererObj.drawString(str, xPos, yPos + 1, 0);
         this.mc.fontRendererObj.drawString(str, xPos, yPos - 1, 0);
         this.mc.fontRendererObj.drawString(str, xPos, yPos, 8453920);
-    }
-    private void drawString(long l, int xPos, int yPos) {
-        drawString(String.valueOf(l),xPos,yPos);
-    }
-    private void drawString(double d, int xPos, int yPos) {
-        drawString(String.valueOf(d),xPos,yPos);
     }
 }
