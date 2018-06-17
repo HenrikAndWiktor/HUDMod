@@ -47,8 +47,10 @@ public class ModHUDRender {
             drawString(s3,xPos,yPos); //Draw Ping
         }
         if (motd!=null) {
-            yPos += 10;
-            drawString(motd,xPos,yPos); //Draw MOTD
+            if (motd.length()<=16) {
+                yPos += 10;
+                drawString(motd, xPos, yPos); //Draw MOTD
+            }
         }
         GlStateManager.popAttrib();
     }
