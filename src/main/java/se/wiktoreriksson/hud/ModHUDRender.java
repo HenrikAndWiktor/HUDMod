@@ -47,7 +47,7 @@ public class ModHUDRender {
             drawString(s3,xPos,yPos); //Draw Ping
         }
         if (motd!=null) {
-            if (motd.length()<=16) {
+            if (motd.length()<=10) {
                 yPos += 10;
                 drawString(motd, xPos, yPos); //Draw MOTD
             }
