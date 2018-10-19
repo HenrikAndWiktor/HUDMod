@@ -14,7 +14,7 @@ import static net.minecraftforge.fml.common.Mod.*;
 @SideOnly(Side.CLIENT)
 @Mod(modid = ModHUD.MODID, version = ModHUD.VERSION, name = ModHUD.NAME, clientSideOnly = true, acceptedMinecraftVersions = "1.8.8")
 public class ModHUD {
-    public static final String VERSION = "1.0";
+    public static final String VERSION = "alpha1.1";
     public static final String MODID = "wgamehud";
     public static final String NAME = "HUD Mod";
 
